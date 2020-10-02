@@ -3,12 +3,17 @@
  */
 package backend;
 
+import java.util.Scanner;
+
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        SchereSteinPapierLogik sspLogik = new SchereSteinPapierLogik();
+
+        Scanner scanner = new Scanner(System.in);
+        String playerAnswer = scanner.next();
+        String randomAnswer = sspLogik.random_decision();
+
+        System.out.println(sspLogik.schereSteinPapier(playerAnswer, randomAnswer));
     }
 }
